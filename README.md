@@ -1,4 +1,4 @@
-## HeroMiner
+## HeroMiner - 2022
 
 Be a drill and try to dig as far down as you are able to.
 

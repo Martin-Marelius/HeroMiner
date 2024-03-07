@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/particles/Loot_text.gd" type="Script" id=3]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Loot_text" type="Node2D" parent="."]
+position = Vector2( 540, 840 )
+script = ExtResource( 3 )
+duration = 1.4

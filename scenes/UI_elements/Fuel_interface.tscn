@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scenes/UI_elements/Building_interface.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/UI_elements/Fuel_interface.gd" type="Script" id=2]
+[ext_resource path="res://assets/player/UIComponents/progressbar_fill_fuel.png" type="Texture" id=3]
+[ext_resource path="res://assets/player/UIComponents/progressbar_top.png" type="Texture" id=4]
+[ext_resource path="res://scripts/Fuel_label.gd" type="Script" id=5]
+[ext_resource path="res://scripts/Fuel.gd" type="Script" id=6]
+[ext_resource path="res://scenes/UI_elements/Button.gd" type="Script" id=7]
+
+[node name="Fuel_interface" instance=ExtResource( 1 )]
+visible = true
+script = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ui_window" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 112.0
+margin_right = -147.0
+alignment = 1
+
+[node name="Label" type="Label" parent="ui_window/VBoxContainer" index="0"]
+margin_top = 118.0
+margin_right = 241.0
+margin_bottom = 132.0
+text = "Fuel Station"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Fuel" type="TextureProgress" parent="ui_window/VBoxContainer" index="1"]
+margin_top = 136.0
+margin_right = 241.0
+margin_bottom = 340.0
+step = 0.2
+rounded = true
+texture_over = ExtResource( 4 )
+texture_progress = ExtResource( 3 )
+fill_mode = 3
+tint_progress = Color( 0.882353, 0.882353, 0.882353, 1 )
+script = ExtResource( 6 )
+
+[node name="Fuel" type="Label" parent="ui_window/VBoxContainer/Fuel" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -187.0
+text = "10
+/
+10"
+align = 1
+valign = 1
+autowrap = true
+script = ExtResource( 5 )
+
+[node name="Label2" type="Label" parent="ui_window/VBoxContainer" index="2"]
+margin_top = 344.0
+margin_right = 241.0
+margin_bottom = 358.0
+text = "Cost: x"
+align = 1
+valign = 1
+
+[node name="Button" type="Button" parent="ui_window/VBoxContainer" index="3"]
+margin_top = 362.0
+margin_right = 241.0
+margin_bottom = 382.0
+script = ExtResource( 7 )
+
+[node name="Label" type="Label" parent="ui_window/VBoxContainer/Button" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Fill tank"
+align = 1
+valign = 1
+uppercase = true

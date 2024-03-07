@@ -1,0 +1,328 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://scenes/UI_elements/Big_popup.tscn" type="PackedScene" id=1]
+[ext_resource path="res://fonts/SourceSansPro-Semibold.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/UI_components/popups/multiplier/Sticker05x.png" type="Texture" id=3]
+[ext_resource path="res://assets/UI_components/popups/multiplier/Sticker.png" type="Texture" id=4]
+[ext_resource path="res://assets/UI_components/popups/multiplier/Button_blue.png" type="Texture" id=5]
+[ext_resource path="res://assets/UI_components/popups/multiplier/Sticker10x.png" type="Texture" id=6]
+[ext_resource path="res://assets/UI_components/popups/multiplier/Item_multiplier.png" type="Texture" id=7]
+[ext_resource path="res://assets/UI_components/popups/multiplier/Button_gray.png" type="Texture" id=8]
+[ext_resource path="res://assets/UI_components/popups/multiplier/Shop_WatchAds.png" type="Texture" id=9]
+[ext_resource path="res://scenes/UI_elements/Multiplier_popup.gd" type="Script" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 18
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 28
+outline_color = Color( 0.0980392, 0.423529, 0.117647, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
+
+[node name="Multiplier_popup" instance=ExtResource( 1 )]
+script = ExtResource( 10 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Items" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 22.0
+margin_top = 85.0
+margin_right = -22.0
+margin_bottom = -91.0
+custom_constants/separation = 30
+
+[node name="no_ads" type="HBoxContainer" parent="Items/VBoxContainer" index="0"]
+margin_right = 727.0
+margin_bottom = 130.0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Items/VBoxContainer/no_ads" index="0"]
+margin_left = 39.0
+margin_right = 687.0
+margin_bottom = 130.0
+texture = ExtResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="Items/VBoxContainer/no_ads/TextureRect" index="0"]
+position = Vector2( 68, 63 )
+scale = Vector2( 0.680232, 0.680232 )
+texture = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="Items/VBoxContainer/no_ads/TextureRect" index="1"]
+margin_left = 144.0
+margin_top = 9.0
+margin_right = 442.0
+margin_bottom = 48.0
+custom_fonts/font = SubResource( 1 )
+text = "No advertisement"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="Items/VBoxContainer/no_ads/TextureRect" index="2"]
+margin_left = 147.0
+margin_top = 55.0
+margin_right = 441.0
+margin_bottom = 105.0
+custom_fonts/font = SubResource( 2 )
+text = "Permanent 2.0x multiplier!"
+
+[node name="TextureButton" type="TextureButton" parent="Items/VBoxContainer/no_ads/TextureRect" index="3"]
+margin_left = 481.0
+margin_top = 37.0
+margin_right = 625.0
+margin_bottom = 130.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 5 )
+texture_disabled = ExtResource( 8 )
+
+[node name="Label" type="Label" parent="Items/VBoxContainer/no_ads/TextureRect/TextureButton" index="0"]
+margin_left = 9.0
+margin_top = 8.0
+margin_right = 138.0
+margin_bottom = 44.0
+custom_colors/font_color = Color( 0.0901961, 0.184314, 0.372549, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Go to shop"
+align = 1
+valign = 1
+
+[node name="refer_friends" type="HBoxContainer" parent="Items/VBoxContainer" index="1"]
+margin_top = 160.0
+margin_right = 727.0
+margin_bottom = 290.0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Items/VBoxContainer/refer_friends" index="0"]
+margin_left = 39.0
+margin_right = 687.0
+margin_bottom = 130.0
+texture = ExtResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="Items/VBoxContainer/refer_friends/TextureRect" index="0"]
+position = Vector2( 66.1723, 66.1724 )
+scale = Vector2( 1.03655, 1.03655 )
+texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="Items/VBoxContainer/refer_friends/TextureRect" index="1"]
+margin_left = 144.0
+margin_top = 9.0
+margin_right = 442.0
+margin_bottom = 48.0
+custom_fonts/font = SubResource( 1 )
+text = "Refer friends!"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="Items/VBoxContainer/refer_friends/TextureRect" index="2"]
+margin_left = 147.0
+margin_top = 55.0
+margin_right = 441.0
+margin_bottom = 105.0
+custom_fonts/font = SubResource( 2 )
+text = "0.05x multiplier per friend who signs 
+up using your code"
+
+[node name="TextureButton" type="TextureButton" parent="Items/VBoxContainer/refer_friends/TextureRect" index="3"]
+margin_left = 481.0
+margin_top = 37.0
+margin_right = 625.0
+margin_bottom = 130.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 5 )
+texture_disabled = ExtResource( 8 )
+
+[node name="Label" type="Label" parent="Items/VBoxContainer/refer_friends/TextureRect/TextureButton" index="0"]
+margin_left = 9.0
+margin_top = 8.0
+margin_right = 138.0
+margin_bottom = 44.0
+custom_colors/font_color = Color( 0.0901961, 0.184314, 0.372549, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Get code"
+align = 1
+valign = 1
+
+[node name="buy_multipliers" type="HBoxContainer" parent="Items/VBoxContainer" index="2"]
+margin_top = 320.0
+margin_right = 727.0
+margin_bottom = 450.0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Items/VBoxContainer/buy_multipliers" index="0"]
+margin_left = 39.0
+margin_right = 687.0
+margin_bottom = 130.0
+texture = ExtResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="Items/VBoxContainer/buy_multipliers/TextureRect" index="0"]
+position = Vector2( 66, 66 )
+scale = Vector2( 1.02665, 1.02665 )
+texture = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="Items/VBoxContainer/buy_multipliers/TextureRect" index="1"]
+margin_left = 144.0
+margin_top = 9.0
+margin_right = 442.0
+margin_bottom = 48.0
+custom_fonts/font = SubResource( 1 )
+text = "Buy multipliers!"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="Items/VBoxContainer/buy_multipliers/TextureRect" index="2"]
+margin_left = 147.0
+margin_top = 55.0
+margin_right = 441.0
+margin_bottom = 105.0
+custom_fonts/font = SubResource( 2 )
+text = "Buy 2.0x to 10.0x multipliers at
+the crystal item shop."
+
+[node name="TextureButton" type="TextureButton" parent="Items/VBoxContainer/buy_multipliers/TextureRect" index="3"]
+margin_left = 481.0
+margin_top = 37.0
+margin_right = 625.0
+margin_bottom = 130.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 5 )
+texture_disabled = ExtResource( 8 )
+
+[node name="Label" type="Label" parent="Items/VBoxContainer/buy_multipliers/TextureRect/TextureButton" index="0"]
+margin_left = 9.0
+margin_top = 8.0
+margin_right = 138.0
+margin_bottom = 44.0
+custom_colors/font_color = Color( 0.0901961, 0.184314, 0.372549, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Go to shop"
+align = 1
+valign = 1
+
+[node name="Like" type="HBoxContainer" parent="Items/VBoxContainer" index="3"]
+margin_top = 480.0
+margin_right = 727.0
+margin_bottom = 610.0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Items/VBoxContainer/Like" index="0"]
+margin_left = 39.0
+margin_right = 687.0
+margin_bottom = 130.0
+texture = ExtResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="Items/VBoxContainer/Like/TextureRect" index="0"]
+position = Vector2( 65.887, 65.887 )
+scale = Vector2( 1.037, 1.037 )
+texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="Items/VBoxContainer/Like/TextureRect" index="1"]
+margin_left = 144.0
+margin_top = 9.0
+margin_right = 442.0
+margin_bottom = 48.0
+custom_fonts/font = SubResource( 1 )
+text = "Like on Facebook"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="Items/VBoxContainer/Like/TextureRect" index="2"]
+margin_left = 147.0
+margin_top = 55.0
+margin_right = 441.0
+margin_bottom = 105.0
+custom_fonts/font = SubResource( 2 )
+text = "Like us on Facebook and recieve 
+0.2x permanent multiplier. "
+
+[node name="TextureButton" type="TextureButton" parent="Items/VBoxContainer/Like/TextureRect" index="3"]
+margin_left = 481.0
+margin_top = 37.0
+margin_right = 625.0
+margin_bottom = 130.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 5 )
+texture_disabled = ExtResource( 8 )
+
+[node name="Label" type="Label" parent="Items/VBoxContainer/Like/TextureRect/TextureButton" index="0"]
+margin_left = 9.0
+margin_top = 8.0
+margin_right = 138.0
+margin_bottom = 44.0
+custom_colors/font_color = Color( 0.0901961, 0.184314, 0.372549, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Like"
+align = 1
+valign = 1
+
+[node name="Share" type="HBoxContainer" parent="Items/VBoxContainer" index="4"]
+margin_top = 640.0
+margin_right = 727.0
+margin_bottom = 770.0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Items/VBoxContainer/Share" index="0"]
+margin_left = 39.0
+margin_right = 687.0
+margin_bottom = 130.0
+texture = ExtResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="Items/VBoxContainer/Share/TextureRect" index="0"]
+position = Vector2( 65.887, 65.887 )
+scale = Vector2( 1.037, 1.037 )
+texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="Items/VBoxContainer/Share/TextureRect" index="1"]
+margin_left = 144.0
+margin_top = 9.0
+margin_right = 442.0
+margin_bottom = 48.0
+custom_fonts/font = SubResource( 1 )
+text = "Share on Facebook"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="Items/VBoxContainer/Share/TextureRect" index="2"]
+margin_left = 147.0
+margin_top = 55.0
+margin_right = 441.0
+margin_bottom = 105.0
+custom_fonts/font = SubResource( 2 )
+text = "Share us on Facebook and recieve 
+0.2x permanent multiplier. "
+
+[node name="TextureButton" type="TextureButton" parent="Items/VBoxContainer/Share/TextureRect" index="3"]
+margin_left = 481.0
+margin_top = 37.0
+margin_right = 625.0
+margin_bottom = 130.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 5 )
+texture_disabled = ExtResource( 8 )
+
+[node name="Label" type="Label" parent="Items/VBoxContainer/Share/TextureRect/TextureButton" index="0"]
+margin_left = 9.0
+margin_top = 8.0
+margin_right = 138.0
+margin_bottom = 44.0
+custom_colors/font_color = Color( 0.0901961, 0.184314, 0.372549, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Share"
+align = 1
+valign = 1

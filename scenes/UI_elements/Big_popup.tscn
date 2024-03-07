@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/UI_components/popups/Big_popup.png" type="Texture" id=1]
+[ext_resource path="res://scenes/UI_elements/Big_popup.gd" type="Script" id=2]
+[ext_resource path="res://assets/UI_components/popups/exit_button.png" type="Texture" id=3]
+[ext_resource path="res://assets/UI_components/popups/button_close_pressed.png" type="Texture" id=4]
+
+[node name="Big_popup" type="Sprite"]
+scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Exit_button" type="TouchScreenButton" parent="."]
+position = Vector2( 346, -528 )
+normal = ExtResource( 3 )
+pressed = ExtResource( 4 )
+
+[node name="Items" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -386.0
+margin_top = -513.0
+margin_right = -426.0
+margin_bottom = -541.0
+
+[connection signal="pressed" from="Exit_button" to="." method="_on_Exit_button_pressed"]

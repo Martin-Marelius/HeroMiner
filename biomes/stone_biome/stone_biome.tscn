@@ -1,0 +1,95 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://assets/minerals/scenes/ores/Titanium.tscn" type="PackedScene" id=1]
+[ext_resource path="res://biomes/scripts/Biome.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/minerals/scenes/ores/Silver.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/minerals/scenes/ores/Gold.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/minerals/scenes/ores/Coal.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/minerals/scenes/ores/Opal.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/minerals/scenes/ores/Lead.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/minerals/scenes/ores/Cobalt.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/minerals/scenes/ores/Iron.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/minerals/scenes/ores/Tin.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/backgrounds/ranch/mine_background/stone_background.png" type="Texture" id=11]
+
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0.503356, 0.0909091 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Curve" id=2]
+_data = [ Vector2( 0.473154, 0.109091 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0.379195, 0.109091 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Curve" id=4]
+_data = [ Vector2( 0.248322, 0.0454545 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Curve" id=5]
+_data = [ Vector2( 0, 0 ), 0.0, 0.694639, 0, 0, Vector2( 1, 0.127273 ), -0.17668, 0.0, 0, 0 ]
+
+[sub_resource type="Curve" id=6]
+_data = [ Vector2( 0, 0.0818181 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.0818181 ), -0.108364, 0.0, 0, 0 ]
+
+[sub_resource type="Curve" id=7]
+_data = [ Vector2( 0, 0 ), 0.0, 0.162545, 0, 0, Vector2( 0.996644, 0.145455 ), -0.084659, 0.0, 0, 0 ]
+
+[sub_resource type="Curve" id=8]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.1 ), -0.451515, 0.0, 0, 0 ]
+
+[sub_resource type="Curve" id=9]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.0727272 ), 0.150505, 0.0, 0, 0 ]
+
+[node name="Stone_biome" instance=ExtResource( 2 )]
+
+[node name="Coal" parent="Minerals" index="0" instance=ExtResource( 5 )]
+start_depth = 800
+end_depth = 1500
+spawn_curve = SubResource( 1 )
+
+[node name="Tin" parent="Minerals" index="1" instance=ExtResource( 10 )]
+start_depth = 800
+end_depth = 1500
+spawn_curve = SubResource( 2 )
+
+[node name="Iron" parent="Minerals" index="2" instance=ExtResource( 9 )]
+start_depth = 800
+end_depth = 1500
+spawn_curve = SubResource( 3 )
+
+[node name="Opal" parent="Minerals" index="3" instance=ExtResource( 6 )]
+start_depth = 800
+end_depth = 1500
+spawn_curve = SubResource( 4 )
+
+[node name="Lead" parent="Minerals" index="4" instance=ExtResource( 7 )]
+start_depth = 800
+end_depth = 1500
+spawn_curve = SubResource( 5 )
+
+[node name="Silver" parent="Minerals" index="5" instance=ExtResource( 3 )]
+start_depth = 800
+end_depth = 1500
+spawn_curve = SubResource( 6 )
+
+[node name="Cobalt" parent="Minerals" index="6" instance=ExtResource( 8 )]
+start_depth = 900
+end_depth = 1500
+spawn_curve = SubResource( 7 )
+
+[node name="Titanium" parent="Minerals" index="7" instance=ExtResource( 1 )]
+start_depth = 1000
+end_depth = 1500
+spawn_curve = SubResource( 8 )
+
+[node name="Gold" parent="Minerals" index="8" instance=ExtResource( 4 )]
+start_depth = 800
+end_depth = 1500
+spawn_curve = SubResource( 9 )
+
+[node name="Background_texture" parent="ParallaxBackground/ParallaxLayer" index="0"]
+modulate = Color( 0.72549, 0.72549, 0.72549, 1 )
+texture = ExtResource( 11 )
+
+[node name="Background_texture" parent="ParallaxBackground/ParallaxLayer2" index="0"]
+modulate = Color( 0.72549, 0.72549, 0.72549, 1 )
+texture = ExtResource( 11 )

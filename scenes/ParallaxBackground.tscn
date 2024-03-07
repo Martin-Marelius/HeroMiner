@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/backgrounds/dirt_full_bg.png" type="Texture" id=1]
+[ext_resource path="res://assets/backgrounds/sky_layer.png" type="Texture" id=2]
+[ext_resource path="res://assets/backgrounds/premade_04.png" type="Texture" id=3]
+[ext_resource path="res://assets/backgrounds/dirt_bg (1).png" type="Texture" id=4]
+[ext_resource path="res://scripts/DirtLayer.gd" type="Script" id=5]
+[ext_resource path="res://scenes/CanvasModulate.gd" type="Script" id=6]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.95, 0.9 )
+motion_mirroring = Vector2( 576, 1296 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxLayer"]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="DirtLayer" type="ParallaxLayer" parent="."]
+modulate = Color( 0.705882, 0.705882, 0.705882, 1 )
+motion_scale = Vector2( 0.95, 1 )
+motion_mirroring = Vector2( 614.4, 1421.4 )
+script = ExtResource( 5 )
+
+[node name="Sprite2" type="Sprite" parent="DirtLayer"]
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxLayer2"]
+modulate = Color( 0.901961, 0.901961, 0.901961, 1 )
+position = Vector2( 0, -228 )
+scale = Vector2( 1, 0.155599 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2( 576, 0 )
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxLayer3"]
+margin_top = -4283.0
+margin_right = 576.0
+margin_bottom = -228.0
+color = Color( 0.541176, 0.827451, 0.901961, 1 )
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2( 1024, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxLayer4"]
+modulate = Color( 0.815686, 0.815686, 0.815686, 1 )
+scale = Vector2( 0.5, 0.5737 )
+texture = ExtResource( 3 )
+centered = false
+offset = Vector2( 0, 5 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+script = ExtResource( 6 )

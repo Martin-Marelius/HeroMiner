@@ -1,0 +1,90 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://scenes/buildings/Item_shop.gd" type="Script" id=1]
+[ext_resource path="res://assets/buildings/item_shop/Shop (1).png" type="Texture" id=2]
+[ext_resource path="res://scenes/buildings/Building.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/buildings/mineral_processor/smoke_02.png" type="Texture" id=4]
+[ext_resource path="res://assets/buildings/Shop_highlight.png" type="Texture" id=5]
+
+[sub_resource type="Gradient" id=4]
+offsets = PoolRealArray( 0.0636943, 0.681529, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 4 )
+
+[sub_resource type="ParticlesMaterial" id=5]
+lifetime_randomness = 1.0
+flag_disable_z = true
+direction = Vector3( 0, -100, 0 )
+gravity = Vector3( 0, -100, 0 )
+initial_velocity = 30.0
+initial_velocity_random = 0.1
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 6.0
+linear_accel_random = 0.4
+tangential_accel = 60.0
+tangential_accel_random = 0.3
+damping = 10.0
+damping_random = 0.1
+angle = 720.0
+angle_random = 1.0
+scale = 0.05
+scale_random = 0.1
+color_ramp = SubResource( 3 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 137.5, 140.5 )
+
+[node name="Item_shop" instance=ExtResource( 3 )]
+script = ExtResource( 1 )
+id = 4
+
+[node name="smoke" type="Particles2D" parent="." index="0"]
+position = Vector2( 79, -104 )
+scale = Vector2( 0.4, 0.4 )
+amount = 120
+lifetime = 2.0
+speed_scale = 0.5
+process_material = SubResource( 5 )
+texture = ExtResource( 4 )
+
+[node name="smoke3" type="Particles2D" parent="." index="1"]
+position = Vector2( 95, -96 )
+rotation = -0.186779
+scale = Vector2( 0.4, 0.4 )
+amount = 120
+lifetime = 2.0
+speed_scale = 0.5
+process_material = SubResource( 5 )
+texture = ExtResource( 4 )
+
+[node name="smoke2" type="Particles2D" parent="." index="2"]
+position = Vector2( -72, -101 )
+rotation = -0.332734
+scale = Vector2( 0.4, 0.4 )
+amount = 120
+lifetime = 2.0
+speed_scale = 0.5
+process_material = SubResource( 5 )
+texture = ExtResource( 4 )
+
+[node name="Highlight" parent="." index="4"]
+texture = ExtResource( 5 )
+
+[node name="building" parent="." index="5"]
+texture = ExtResource( 2 )
+
+[node name="Building_onclick" parent="." index="6"]
+position = Vector2( -145, -246 )
+scale = Vector2( 1, 1.47561 )
+normal = ExtResource( 5 )
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2( 0.5, -31.5 )
+shape = SubResource( 6 )
+
+[node name="Enter_button" parent="Node2D" index="0"]
+margin_top = -196.0
+margin_bottom = -61.0

@@ -1,0 +1,112 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://biomes/dirt_biome/dirt_biome.gd" type="Script" id=1]
+[ext_resource path="res://biomes/scripts/Biome.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/tilesets/details/details_dirt.png" type="Texture" id=3]
+[ext_resource path="res://assets/minerals/scenes/ores/Tin.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/minerals/scenes/ores/Coal.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/minerals/scenes/ores/Copper.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/minerals/scenes/ores/Iron.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/minerals/scenes/ores/Quartz.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/minerals/scenes/ores/Lead.tscn" type="PackedScene" id=9]
+[ext_resource path="res://biomes/dirt_biome/Background_texture.gd" type="Script" id=10]
+[ext_resource path="res://assets/backgrounds/ranch/mine_background/dirt_background.png" type="Texture" id=11]
+
+[sub_resource type="Curve" id=2]
+_data = [ Vector2( 0, 0.0727272 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.363636 ), -1.09403, 0.0, 0, 0 ]
+
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0, 0.154545 ), 0.0, 0.986561, 0, 0, Vector2( 1, 0.3 ), -0.30981, 0.0, 0, 0 ]
+
+[sub_resource type="Curve" id=4]
+_data = [ Vector2( 0, 0.0909091 ), 0.0, 0.0, 0, 0, Vector2( 0.392617, 0.418182 ), 0.495675, 0.495675, 0, 0, Vector2( 1, 0.263636 ), -0.262626, 0.0, 0, 0 ]
+
+[sub_resource type="Curve" id=6]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.318792, 0.190909 ), 1.4, 0.0, 0, 0, Vector2( 1, 0.109091 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Curve" id=5]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.163636 ), -0.511149, 0.0, 0, 0 ]
+
+[sub_resource type="Curve" id=7]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.145455 ), -0.338636, 0.0, 0, 0 ]
+
+[sub_resource type="TileSet" id=1]
+0/name = "details_dirt.png 0"
+0/texture = ExtResource( 3 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 320, 256 )
+0/tile_mode = 2
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 64, 64 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+
+[node name="dirt_biome" instance=ExtResource( 2 )]
+script = ExtResource( 1 )
+start_depth = 5
+tile_id = 0
+tile_details = true
+spawn_minerals = true
+spawn_treasure = true
+
+[node name="Coal" parent="Minerals" index="0" instance=ExtResource( 5 )]
+start_depth = 5
+end_depth = 300
+spawn_curve = SubResource( 2 )
+
+[node name="Copper" parent="Minerals" index="1" instance=ExtResource( 6 )]
+start_depth = 5
+end_depth = 300
+spawn_curve = SubResource( 3 )
+
+[node name="Tin" parent="Minerals" index="2" instance=ExtResource( 4 )]
+start_depth = 5
+end_depth = 300
+spawn_curve = SubResource( 4 )
+
+[node name="Quartz" parent="Minerals" index="3" instance=ExtResource( 8 )]
+start_depth = 75
+end_depth = 300
+spawn_curve = SubResource( 6 )
+
+[node name="Iron" parent="Minerals" index="4" instance=ExtResource( 7 )]
+start_depth = 5
+end_depth = 300
+spawn_curve = SubResource( 5 )
+
+[node name="Lead" parent="Minerals" index="5" instance=ExtResource( 9 )]
+start_depth = 50
+end_depth = 300
+spawn_curve = SubResource( 7 )
+
+[node name="detailset" parent="Details" index="0"]
+modulate = Color( 0.513726, 0.513726, 0.513726, 1 )
+tile_set = SubResource( 1 )
+tile_data = PoolIntArray( 393215, 1, 131073, 524290, 1, 65538, 589829, 1, 196610 )
+
+[node name="ParallaxBackground" parent="." index="3"]
+layer = -92
+scroll_base_offset = Vector2( 0, 1200 )
+
+[node name="Background_texture" parent="ParallaxBackground/ParallaxLayer" index="0"]
+modulate = Color( 0.901961, 0.901961, 0.901961, 1 )
+texture = ExtResource( 11 )
+offset = Vector2( -200, 0 )
+script = ExtResource( 10 )
+
+[node name="Background_texture" parent="ParallaxBackground/ParallaxLayer2" index="0"]
+modulate = Color( 0.901961, 0.901961, 0.901961, 1 )
+texture = ExtResource( 11 )
+offset = Vector2( 1960, 0 )

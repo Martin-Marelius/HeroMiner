@@ -1,0 +1,455 @@
+[gd_scene load_steps=49 format=2]
+
+[ext_resource path="res://assets/UI_components/Top_bar/Top_bar_middle.png" type="Texture" id=1]
+[ext_resource path="res://scripts/cash.gd" type="Script" id=2]
+[ext_resource path="res://assets/UI_components/Btn_Add.png" type="Texture" id=3]
+[ext_resource path="res://scripts/globals/BADABB__.TTF" type="DynamicFontData" id=4]
+[ext_resource path="res://scripts/globals/wheaton capitals.otf" type="DynamicFontData" id=5]
+[ext_resource path="res://scripts/Score_label.gd" type="Script" id=6]
+[ext_resource path="res://scenes/Depth_value.gd" type="Script" id=7]
+[ext_resource path="res://scenes/Crystal_label.gd" type="Script" id=8]
+[ext_resource path="res://scripts/Fuel.gd" type="Script" id=9]
+[ext_resource path="res://assets/UI_components/Button_options.png" type="Texture" id=10]
+[ext_resource path="res://assets/UI_components/Fuel/Fuel_bar.png" type="Texture" id=11]
+[ext_resource path="res://assets/UI_components/Button_options_pressed.png" type="Texture" id=12]
+[ext_resource path="res://assets/UI_components/Inventory/Inventory_progress.png" type="Texture" id=13]
+[ext_resource path="res://assets/UI_components/Inventory/Inventory_top.png" type="Texture" id=14]
+[ext_resource path="res://assets/UI_components/Inventory/Inventory_back.png" type="Texture" id=15]
+[ext_resource path="res://scripts/Inventory.gd" type="Script" id=16]
+[ext_resource path="res://scripts/Inventory_popup.gd" type="Script" id=17]
+[ext_resource path="res://scenes/new_theme.tres" type="Theme" id=18]
+[ext_resource path="res://assets/UI_components/Top_bar/Top_bar_extension.png" type="Texture" id=19]
+[ext_resource path="res://assets/UI_components/Bottom_bar/Button_home.png" type="Texture" id=20]
+[ext_resource path="res://assets/UI_components/Bottom_bar/Button_inventory_pressed.png" type="Texture" id=21]
+[ext_resource path="res://assets/UI_components/Bottom_bar/Button_profile.png" type="Texture" id=22]
+[ext_resource path="res://assets/UI_components/Bottom_bar/Button_boost.png" type="Texture" id=23]
+[ext_resource path="res://assets/UI_components/Bottom_bar/Button_achievements.png" type="Texture" id=24]
+[ext_resource path="res://assets/UI_components/Bottom_bar/Button_achievements_pressed.png" type="Texture" id=25]
+[ext_resource path="res://assets/UI_components/Bottom_bar/Button_home_pressed.png" type="Texture" id=26]
+[ext_resource path="res://assets/UI_components/Bottom_bar/Button_profile_pressed.png" type="Texture" id=27]
+[ext_resource path="res://assets/UI_components/Bottom_bar/Button_inventory.png" type="Texture" id=28]
+[ext_resource path="res://assets/UI_components/Bottom_bar/Button_boost_pressed.png" type="Texture" id=29]
+[ext_resource path="res://fonts/SourceSansPro-Semibold.otf" type="DynamicFontData" id=30]
+[ext_resource path="res://scenes/UI_elements/Boost_popup.tscn" type="PackedScene" id=31]
+[ext_resource path="res://scenes/UI_elements/Multiplier_popup.tscn" type="PackedScene" id=32]
+[ext_resource path="res://scenes/UI_elements/Shop_mineral_processor.tscn" type="PackedScene" id=33]
+[ext_resource path="res://scenes/UI_elements/Shop_bank.tscn" type="PackedScene" id=34]
+[ext_resource path="res://assets/UI_components/Btn_Add_pressed.png" type="Texture" id=35]
+[ext_resource path="res://scenes/UI_elements/shop_workshop.tscn" type="PackedScene" id=36]
+[ext_resource path="res://scenes/UI_elements/shop_items.tscn" type="PackedScene" id=37]
+[ext_resource path="res://scenes/UI_elements/shop_fuel_station.tscn" type="PackedScene" id=38]
+
+[sub_resource type="DynamicFont" id=2]
+size = 36
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 36
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+extra_spacing_char = 1
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 12
+outline_size = 1
+outline_color = Color( 0.207843, 0.490196, 0.509804, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 24
+outline_size = 1
+outline_color = Color( 0.14902, 0.329412, 0.345098, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 46
+outline_size = 1
+outline_color = Color( 0.223529, 0.435294, 0.454902, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 5 )
+
+[sub_resource type="StreamTexture" id=6]
+flags = 4
+load_path = "res://.import/Fuel_back.png-3443a2c9458292baa84eca69622e64be.stex"
+
+[sub_resource type="StreamTexture" id=7]
+flags = 4
+load_path = "res://.import/Fuel_top.png-9a33349d4d1ae434981a8d6e7a250dca.stex"
+
+[sub_resource type="DynamicFont" id=8]
+size = 34
+outline_size = 1
+outline_color = Color( 0.223529, 0.435294, 0.454902, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 5 )
+
+[sub_resource type="StreamTexture" id=9]
+flags = 4
+load_path = "res://.import/Bottom_bar.png-c2f4ba6671cda4048d1f96f64e2e108e.stex"
+
+[sub_resource type="DynamicFont" id=10]
+size = 50
+outline_size = 1
+outline_color = Color( 0.0196078, 0.262745, 0, 1 )
+use_mipmaps = true
+use_filter = true
+extra_spacing_char = 6
+font_data = ExtResource( 30 )
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Full_screen" type="Control" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Top_center_container" type="CenterContainer" parent="Control/Full_screen"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -540.0
+margin_right = 540.0
+margin_bottom = 227.0
+
+[node name="Top_bar" type="Sprite" parent="Control/Full_screen/Top_center_container"]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Left_extension" type="Sprite" parent="Control/Full_screen/Top_center_container/Top_bar"]
+position = Vector2( -1080, 0 )
+texture = ExtResource( 19 )
+centered = false
+flip_h = true
+
+[node name="Right_extension" type="Sprite" parent="Control/Full_screen/Top_center_container/Top_bar"]
+position = Vector2( 1080, 0 )
+texture = ExtResource( 19 )
+centered = false
+
+[node name="Crystal_shop_button" type="TouchScreenButton" parent="Control/Full_screen/Top_center_container/Top_bar"]
+position = Vector2( 244, 13 )
+normal = ExtResource( 3 )
+pressed = ExtResource( 35 )
+
+[node name="Crystal_label" type="Label" parent="Control/Full_screen/Top_center_container/Top_bar"]
+margin_left = 70.0
+margin_top = 20.0
+margin_right = 264.0
+margin_bottom = 63.0
+custom_colors/font_color = Color( 0.937255, 0.905882, 0.611765, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "122"
+align = 1
+valign = 1
+script = ExtResource( 8 )
+
+[node name="Cash_label" type="Label" parent="Control/Full_screen/Top_center_container/Top_bar"]
+margin_left = 380.0
+margin_top = 20.0
+margin_right = 574.0
+margin_bottom = 63.0
+custom_colors/font_color = Color( 0.937255, 0.905882, 0.611765, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "260"
+align = 1
+valign = 1
+script = ExtResource( 2 )
+
+[node name="Cash_sign" type="Label" parent="Control/Full_screen/Top_center_container/Top_bar"]
+margin_left = 380.0
+margin_top = 20.0
+margin_right = 574.0
+margin_bottom = 63.0
+custom_colors/font_color = Color( 0.937255, 0.905882, 0.611765, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "$"
+align = 2
+valign = 1
+
+[node name="score" type="Label" parent="Control/Full_screen/Top_center_container/Top_bar"]
+visible = false
+margin_left = 695.0
+margin_top = 59.0
+margin_right = 738.0
+margin_bottom = 75.0
+custom_colors/font_color = Color( 0.839216, 1, 0.972549, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "score:"
+
+[node name="Score_value" type="Label" parent="Control/Full_screen/Top_center_container/Top_bar"]
+margin_left = 687.0
+margin_top = 37.0
+margin_right = 861.0
+margin_bottom = 77.0
+custom_colors/font_color = Color( 0, 0.792157, 0.741176, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "10245"
+align = 1
+valign = 1
+autowrap = true
+script = ExtResource( 6 )
+
+[node name="Depth_value" type="Label" parent="Control/Full_screen/Top_center_container/Top_bar"]
+margin_left = 413.0
+margin_top = 118.0
+margin_right = 667.0
+margin_bottom = 178.0
+custom_colors/font_color = Color( 0, 0.792157, 0.741176, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "245 m"
+align = 1
+valign = 1
+script = ExtResource( 7 )
+
+[node name="Node2D" type="Node2D" parent="Control/Full_screen/Top_center_container/Top_bar"]
+scale = Vector2( 2, 2 )
+
+[node name="TextureButton" type="TextureButton" parent="Control/Full_screen/Top_center_container/Top_bar/Node2D"]
+margin_left = 467.0
+margin_top = 13.0
+margin_right = 531.0
+margin_bottom = 65.0
+keep_pressed_outside = true
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 12 )
+
+[node name="Fuel_container" type="CenterContainer" parent="Control/Full_screen"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -875.0
+margin_right = 145.0
+margin_bottom = -163.0
+
+[node name="Fuel_texture" type="TextureProgress" parent="Control/Full_screen/Fuel_container"]
+margin_top = 137.0
+margin_right = 145.0
+margin_bottom = 575.0
+max_value = 12.0
+step = 0.1
+texture_under = SubResource( 6 )
+texture_over = SubResource( 7 )
+texture_progress = ExtResource( 11 )
+fill_mode = 3
+script = ExtResource( 9 )
+
+[node name="Inventory_container" type="CenterContainer" parent="Control/Full_screen"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -414.0
+margin_top = -791.0
+margin_right = -1.0
+margin_bottom = 140.0
+
+[node name="Inventory" type="Node2D" parent="Control/Full_screen/Inventory_container"]
+position = Vector2( 320, -60 )
+scale = Vector2( 1.4, 1.4 )
+script = ExtResource( 17 )
+
+[node name="TextureProgress" type="TextureProgress" parent="Control/Full_screen/Inventory_container/Inventory"]
+margin_top = 151.0
+margin_right = 413.0
+margin_bottom = 779.0
+rounded = true
+allow_greater = true
+texture_under = ExtResource( 15 )
+texture_over = ExtResource( 14 )
+texture_progress = ExtResource( 13 )
+texture_progress_offset = Vector2( 24.5, 232.5 )
+fill_mode = 3
+script = ExtResource( 16 )
+
+[node name="Label" type="Label" parent="Control/Full_screen/Inventory_container/Inventory/TextureProgress"]
+margin_left = 143.0
+margin_top = 12.0
+margin_right = 332.0
+margin_bottom = 56.0
+custom_colors/font_color = Color( 0, 0.792157, 0.741176, 1 )
+custom_fonts/font = SubResource( 8 )
+text = "0 / 14"
+align = 1
+valign = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/Full_screen/Inventory_container/Inventory/TextureProgress"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -132.5
+margin_top = -243.0
+margin_right = 188.5
+margin_bottom = 282.0
+scroll_horizontal_enabled = false
+
+[node name="Button" type="Button" parent="Control/Full_screen/Inventory_container/Inventory/TextureProgress/ScrollContainer"]
+margin_right = 500.0
+margin_bottom = 1000.0
+rect_min_size = Vector2( 500, 1000 )
+theme = ExtResource( 18 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Full_screen/Inventory_container/Inventory/TextureProgress/ScrollContainer/Button"]
+custom_constants/separation = 6
+
+[node name="Tween" type="Tween" parent="Control/Full_screen/Inventory_container/Inventory"]
+
+[node name="Bottom_center_container" type="CenterContainer" parent="Control/Full_screen"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -20.0
+margin_top = -40.0
+margin_right = 20.0
+
+[node name="Bottom_bar" type="Sprite" parent="Control/Full_screen/Bottom_center_container"]
+position = Vector2( 20, 2 )
+texture = SubResource( 9 )
+
+[node name="Left_extension" type="Sprite" parent="Control/Full_screen/Bottom_center_container/Bottom_bar"]
+position = Vector2( -1080, 0 )
+texture = SubResource( 9 )
+flip_h = true
+
+[node name="Right_extension" type="Sprite" parent="Control/Full_screen/Bottom_center_container/Bottom_bar"]
+position = Vector2( 1080, 0 )
+texture = SubResource( 9 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Full_screen/Bottom_center_container/Bottom_bar"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -540.0
+margin_top = -172.0
+margin_right = -540.0
+margin_bottom = -39.0
+custom_constants/separation = 44
+alignment = 1
+
+[node name="Profile" type="VBoxContainer" parent="Control/Full_screen/Bottom_center_container/Bottom_bar/HBoxContainer"]
+visible = false
+margin_left = 113.0
+margin_right = 234.0
+margin_bottom = 133.0
+alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="Control/Full_screen/Bottom_center_container/Bottom_bar/HBoxContainer/Profile"]
+margin_top = 16.0
+margin_right = 121.0
+margin_bottom = 116.0
+texture_normal = ExtResource( 22 )
+texture_pressed = ExtResource( 27 )
+flip_h = true
+
+[node name="Inventory" type="VBoxContainer" parent="Control/Full_screen/Bottom_center_container/Bottom_bar/HBoxContainer"]
+margin_left = 218.0
+margin_right = 339.0
+margin_bottom = 133.0
+alignment = 1
+
+[node name="TextureButton2" type="TextureButton" parent="Control/Full_screen/Bottom_center_container/Bottom_bar/HBoxContainer/Inventory"]
+margin_top = 16.0
+margin_right = 121.0
+margin_bottom = 116.0
+texture_normal = ExtResource( 28 )
+texture_pressed = ExtResource( 21 )
+flip_h = true
+
+[node name="Boost" type="VBoxContainer" parent="Control/Full_screen/Bottom_center_container/Bottom_bar/HBoxContainer"]
+margin_left = 383.0
+margin_right = 697.0
+margin_bottom = 133.0
+
+[node name="Boost_button" type="TextureButton" parent="Control/Full_screen/Bottom_center_container/Bottom_bar/HBoxContainer/Boost"]
+margin_right = 314.0
+margin_bottom = 114.0
+texture_normal = ExtResource( 23 )
+texture_pressed = ExtResource( 29 )
+
+[node name="Boost_label" type="Label" parent="Control/Full_screen/Bottom_center_container/Bottom_bar/HBoxContainer/Boost/Boost_button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 3.0
+margin_bottom = -10.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 10 )
+text = "BOOST"
+align = 1
+valign = 1
+
+[node name="Achievements" type="VBoxContainer" parent="Control/Full_screen/Bottom_center_container/Bottom_bar/HBoxContainer"]
+visible = false
+margin_left = 719.0
+margin_right = 719.0
+margin_bottom = 133.0
+alignment = 1
+
+[node name="TextureButton4" type="TextureButton" parent="Control/Full_screen/Bottom_center_container/Bottom_bar/HBoxContainer/Achievements"]
+visible = false
+margin_top = 30.0
+margin_right = 89.0
+margin_bottom = 102.0
+texture_normal = ExtResource( 24 )
+texture_pressed = ExtResource( 25 )
+flip_h = true
+
+[node name="Home" type="VBoxContainer" parent="Control/Full_screen/Bottom_center_container/Bottom_bar/HBoxContainer"]
+margin_left = 741.0
+margin_right = 862.0
+margin_bottom = 133.0
+alignment = 1
+
+[node name="TextureButton5" type="TextureButton" parent="Control/Full_screen/Bottom_center_container/Bottom_bar/HBoxContainer/Home"]
+margin_top = 16.0
+margin_right = 121.0
+margin_bottom = 116.0
+texture_normal = ExtResource( 20 )
+texture_pressed = ExtResource( 26 )
+flip_h = true
+
+[node name="Popups" type="Control" parent="Control"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_top = 700.0
+margin_bottom = 700.0
+
+[node name="Boost_popup" parent="Control/Popups" instance=ExtResource( 31 )]
+
+[node name="Multiplier_popup" parent="Control/Popups" instance=ExtResource( 32 )]
+z_index = 10
+
+[node name="Shop_mineral_processor" parent="Control/Popups" instance=ExtResource( 33 )]
+
+[node name="Multiplier_popup" parent="Control/Popups/Shop_mineral_processor" index="3"]
+pressed = ExtResource( 35 )
+
+[node name="Shop_bank" parent="Control/Popups" instance=ExtResource( 34 )]
+
+[node name="shop_workshop" parent="Control/Popups" instance=ExtResource( 36 )]
+
+[node name="shop_items" parent="Control/Popups" instance=ExtResource( 37 )]
+
+[node name="shop_fuel_station" parent="Control/Popups" instance=ExtResource( 38 )]
+
+[connection signal="pressed" from="Control/Full_screen/Top_center_container/Top_bar/Crystal_shop_button" to="Control/Popups/Shop_bank" method="_on_Crystal_shop_button_pressed"]
+[connection signal="pressed" from="Control/Full_screen/Bottom_center_container/Bottom_bar/HBoxContainer/Boost/Boost_button" to="Control/Popups/Boost_popup" method="_on_Boost_button_pressed"]
+[connection signal="pressed" from="Control/Popups/Shop_mineral_processor/Multiplier_popup" to="Control/Popups/Multiplier_popup" method="_on_Multiplier_popup_pressed"]
+
+[editable path="Control/Popups/Shop_mineral_processor"]
